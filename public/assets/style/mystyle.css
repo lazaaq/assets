@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding-top: 5rem;
+}
+
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+
+    main .container {
+        margin-top: 75px;
+    }
+
+    section {
+        padding-top: -5rem;
+        margin-top: -5rem;
+    }
+
+    .rounded-pill {
+        width: 60%;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    #tentang {
+        margin-bottom: 20px;
+    }
+
+    .row h1 {
+        font-size: 26px;
+    }
+    .row p{
+        font-size: 14px;
+    }
+
+    #tentang,
+    #struktur,
+    #galeri .row p {
+        font-size: 14px;
+    }
+
+    .kotak {
+        font-size: 12px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .vision-subtitle {
+        margin-left: -10px;
+    }
+    #galeri .live{
+        width: 50%;
+    }
+    .foto_kandidat{
+        width: 150px;
+        height: 150px;
+        text-align: center;
+    }
+    .saran{
+        font-size: 12px;
+    }
+}
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+
+.nav-item{
+    color: #7b838a;
+    font-weight: 400;
+}
+
+.kotak {
+    font-size: 16px;
+}
+
+.modal{
+    margin-top: 80px;
+}
+
+.modal-title {
+    font-size: 14px;
+}
+
+.token{
+    font-size: 13px;
+    color: #2f343a;
+}
+
+.InputStyle {
+    border-radius: 25px;
+    border: none;
+    background: #e9ecef;
+    width: 100%;
+    padding: 10px 20px;
+    color: #2f343a;
+}
+
+.saran {
+    border-radius: 25px;
+    border: none;
+    background: #e9ecef;
+    width: 80%;
+    padding: 10px 20px;
+    color: #2f343a;
+    font-size: 24px;
+}
+
+.live {
+    border-radius: 25px;
+    border: none;
+    background: #fbebec;
+    padding: 10px 20px;
+    color: #b02a37;
+    width: 16%;
+}
+
+.count{
+    border-radius: 25px;
+    border: none;
+    background: #fbebec;
+    padding: 5px 50px;
+    color: #b02a37;
+}
+
+.button1{
+    border-radius: 25px;
+}
+
+.vote{
+    color: white;
+    text-decoration: none;
+}
+
+.btn-abu{
+    background-color: #e9ecef;
+    width: 100%;
+}
+
+.btn-visi{
+    background-color: #40aa79;
+    width: 100%;
+    font-size: 22px;
+    font-weight: bold;
+}
