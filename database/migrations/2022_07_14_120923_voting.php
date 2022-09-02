@@ -11,6 +11,7 @@ class Voting extends Migration
         Schema::create('voting', function(Blueprint $table){
             $table->integer('no_urut');
             $table->foreign('no_urut')->references('no_urut')->on('kandidat');
+            $table->string('angkatan');
             $table->timestamps();
         });
     }

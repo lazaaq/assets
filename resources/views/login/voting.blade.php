@@ -1,54 +1,5 @@
 @if (Session::has('token'))
-<!-- <!DOCTYPE html>
-<html>
-    <head>
-        @extends('layouts.dump')
-    </head>
-    <body>
-        <table>
-            <tr>
-                @foreach($kandidat_tabel as $kdt)
-                <td>{{ $kdt->no_urut }}</td>
-                @endforeach
-            </tr>
-            <tr>
-                @foreach($kandidat_tabel as $kdt)
-                <td><img src="{{asset('thumb/'.$kdt->foto) }}" alt=""></td>
-                @endforeach
-            </tr>
-            <tr>
-                @foreach($kandidat_tabel as $kdt)
-                <td>{{ $kdt->nim }}</td>
-                @endforeach
-            </tr>
-            <tr>
-                @foreach($kandidat_tabel as $kdt)
-                <td>{{ $kdt->angkatan }}</td>
-                @endforeach
-            </tr>
-            <tr>
-                @foreach($kandidat_tabel as $kdt)
-                <td>{{ $kdt->visi }}</td>
-                @endforeach
-            </tr>
-            <tr>
-                @foreach($kandidat_tabel as $kdt)
-                <td>{{ $kdt->misi }}</td>
-                @endforeach
-            </tr>
-            <tr>
-                @foreach ($kandidat_tabel as $kdt)
-                <form action="{{ route('token.submit', Session::get('token')) }}" method="POST">
-                    @csrf
-                    <input type="hidden" name="no" value="{{$kdt->no_urut}}">
-                    <button type="submit" onclick="return confirm('yakin memilih?')">Vote</button>
-                </form>
-                @endforeach
-            </tr>
-        </table>
-    </body>
-</html>
--->
+
 
 @extends('layouts.dump')
 
@@ -57,7 +8,7 @@
     <header>
         <nav class="navbar bg-white fixed-top">
             <div class="container-fluid navbar1">
-                <a class="navbar-brand text-success" href="index.html">
+                <a class="navbar-brand text-success" href="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                         class="bi bi-arrow-left" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -77,22 +28,14 @@
         <div class="container">
             <section id="galeri">
                 <div class="row featurette mb-5">
-                    <h6 class="fw-bold text-success text-center">
+                    <h6 class="fw-bold text-success text-center judul">
                         &mdash;&mdash;
                         VOTE
                         &mdash;&mdash;
                     </h6>
-                    <h1 class="display-5 fw-bold lh-1 mb-3 text-center">Pemilihan Ketua ASSETS 2022</h1>
-                    <p class="lead fst-italic text-center">Yuk, gunakan hak pilih anda untuk ASSETS yang lebih baik</p>
-                    <div class="d-flex justify-content-center">
-                        <div class="live text-center fw-bold ">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-circle-fill" viewBox="0 0 16 16">
-                                <circle cx="8" cy="8" r="8" />
-                            </svg>
-                            &nbsp;&nbsp;LIVE COUNT
-                        </div>
-                    </div>
+                    <h1 class="display-5 fw-bold lh-1 mb-3 text-center subjudul">Pemilihan Ketua ASSETS 2022</h1>
+                    <p class="lead fst-italic text-center konten">Yuk, gunakan hak pilih anda untuk ASSETS yang lebih baik</p>
+                    
                 </div>
 
                 <div class="album">
@@ -100,25 +43,17 @@
                         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                             <!-- foreach start here -->
                             @foreach($kandidat_tabel as $kdt)
-                            <div class="col mb-3 mx-auto">
+                            <div class="col mb-3 judul mx-auto">
                                 <img src="{{asset('thumb/'.$kdt->foto) }}" alt="" srcset=""
                                     class="bd-placeholder-img card-img-top" width="100%" height="400px">
 
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-center">
-                                        <div class="count text-center fw-bold">
-                                            &nbsp;&nbsp;TOLONG INI BELUM YA
-                                        </div>
-                                    </div>
-
+                                <div class="card-body">    
+                                    
+                                    
                                     <h1 class="text-center mt-2 mb-2">{{ $kdt->nama }}</h1>
                                     <p class="token fst-italic text-center">Kandidat {{ $kdt->no_urut }} - Calon Ketua ASSETS 2022 </p>
-
+                                    <p class="token fst-italic text-center">TRPL {{ $kdt->angkatan }}</p>
                                     <div class="d-grid gap-2">
-                                        <button class="btn btn-outline-success button1" type="button"
-                                            data-bs-toggle="modal" data-bs-target="#myModal{{ $kdt->no_urut }}">VISI & MISI</button>
-                                        
-                                        <!-- buat validasi apakah yakin dikirim atau tidak -->
                                         <form action="{{ route('token.submit', Session::get('token')) }}" method="POST">
                                             @csrf
                                             <input type="hidden" name="no" value="{{$kdt->no_urut}}">
@@ -129,6 +64,7 @@
                             </div>
                             @endforeach
                             <!-- foreach end here -->
+                            
                         </div>
                     </div>
                 </div>
@@ -178,8 +114,11 @@
                                             <div class="text-center">
                                                 <button type="button" class="btn btn-abu mb-3">Misi</button>
                                             </div>
-                                            {{ $kdt->misi }}
-
+                                            <ol>
+                                            @foreach( (explode(",", $kdt->misi)) as $misi)
+                                                <li>{{ $misi }} <br></li>
+                                            @endforeach
+                                            </ol>
                                         </div>
                                     </div>
                                 </div>
@@ -214,6 +153,9 @@
         });
 
     </script>
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<script src="assets/js/main.js"></script>
 
 </body>
 @else

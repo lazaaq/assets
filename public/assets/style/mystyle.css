@@ -1,10 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,700;1,300&display=swap');
+
 * {
     box-sizing: border-box;
     padding: 0;
-    margin: 0;
-}
-
-html {
     font-family: 'Plus Jakarta Sans', sans-serif;
     scroll-behavior: smooth;
 }
@@ -12,7 +10,6 @@ html {
 section {
     padding-top: 5rem;
 }
-
 
 .bd-placeholder-img {
     font-size: 1.125rem;
@@ -54,10 +51,11 @@ section {
     }
 
     .row h1 {
-        font-size: 26px;
+        font-size: 23px;
     }
-    .row p{
-        font-size: 14px;
+
+    .row p {
+        font-size: 12px;
     }
 
     #tentang,
@@ -71,20 +69,39 @@ section {
         width: 100%;
         align-items: center;
     }
+    .kotak-vote {
+        font-size: 12px;
+        width: 100%;
+        align-items: center;
+    }
 
     .vision-subtitle {
         margin-left: -10px;
     }
-    #galeri .live{
+
+    #galeri .live {
         width: 50%;
     }
-    .foto_kandidat{
+
+    .foto_kandidat {
         width: 150px;
         height: 150px;
         text-align: center;
     }
-    .saran{
+
+    .saran p {
         font-size: 12px;
+    }
+    .gabung p{
+        font-size: 12px;
+    }
+    .galery{
+        width: 60%;
+        height: 60%;
+        text-align: center;
+    }
+    .spirit{
+        width: 85%;
     }
 }
 
@@ -93,27 +110,25 @@ section {
     fill: currentColor;
 }
 
-
-.nav-item{
-    color: #7b838a;
-    font-weight: 400;
+.nav-item :hover{
+    color: #40aa79;
 }
 
 .kotak {
     font-size: 16px;
 }
 
-.modal{
-    margin-top: 80px;
+.kotak-vote{
+    font-size: 16px;
 }
 
 .modal-title {
     font-size: 14px;
 }
 
-.token{
+.token {
     font-size: 13px;
-    color: #2f343a;
+    color: #212529;
 }
 
 .InputStyle {
@@ -135,6 +150,10 @@ section {
     font-size: 24px;
 }
 
+.gabung{
+    font-size: 24px;
+}
+
 .live {
     border-radius: 25px;
     border: none;
@@ -144,7 +163,7 @@ section {
     width: 16%;
 }
 
-.count{
+.count {
     border-radius: 25px;
     border: none;
     background: #fbebec;
@@ -152,23 +171,45 @@ section {
     color: #b02a37;
 }
 
-.button1{
+.button1 {
     border-radius: 25px;
 }
 
-.vote{
+.vote {
     color: white;
     text-decoration: none;
 }
 
-.btn-abu{
+.vote:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-abu {
     background-color: #e9ecef;
     width: 100%;
 }
 
-.btn-visi{
+.btn-visi {
     background-color: #40aa79;
     width: 100%;
     font-size: 22px;
     font-weight: bold;
+}
+
+.assets-footer{
+    color: #9A9EA6;
+    text-align: justify;
+}
+
+.lokasi{
+    width: 100%;
+    height: 60vh;
+}
+
+/* struktur organisasi */
+.img-struktur{
+    margin-top: 20px;
+    height: 100%;
+    width: 70%;
 }

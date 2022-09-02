@@ -7,14 +7,22 @@
           <div class="alert alert-success">{{ Session::get('pesan') }}</div>
         @endif
     </div>
-    <br>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Tambah Data
     </button>
+    <br>    <br>
+              <form action="{{ route('generateAll') }}" method="POST">
+                @csrf
+                <button class="btn btn-primary" onclick="return confirm('generate token? ')" type="submit">Generate Token All</button>
+              </form>
+
     <br>
-    <br>
-<table class="table table-striped">
+    <form action="#">
+              @csrf
+                <button class="btn btn-dark" onclick="return confirm('kirim email? ')" type="submit">Send Email All</button>
+              </form>
+    <table class="table table-striped">
     <thead>
         <tr>
             <th>No</th>
@@ -41,16 +49,27 @@
             <td>
               <form action="{{ route('voter.token', $voter->email) }}" method="POST">
                 @csrf
-                <button onclick="return confirm('generate token? ')" type="submit">Generate Token</button>
+                <button class="btn btn-primary btn-sm" onclick="return confirm('generate token? ')" type="submit">Generate Token</button>
+              </form>
+              <form action="{{ route('voter.delete', $voter->email) }}" method="POST">
+                @csrf
+                <button class="btn btn-danger btn-sm" onclick="return confirm('hapus voter? ')" type="submit">Hapus</button>
+              </form>
+              <form action="#">
+              @csrf
+                <button class="btn btn-dark btn-sm" onclick="return confirm('kirim email? ')" type="submit">Kirim Email</button>
               </form>
             </td>
         </tr>
         @endforeach
     </tbody>
+    
 </table>
-
-
-
+<center>
+Page {{ $tabel_voter->currentPage() }}
+<br><br>
+{{ $tabel_voter->links() }}
+</center>
 
 
 

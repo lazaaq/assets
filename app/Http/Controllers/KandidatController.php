@@ -31,7 +31,7 @@ class KandidatController extends Controller
 
         $foto = $req->foto;
         $namafile = time().'.'. $foto->getClientOriginalExtension();
-        Image::make($foto)->resize(150,200)->encode('jpg')->save('thumb/'.$namafile);
+        Image::make($foto)->resize(300,400)->encode('jpg')->save('thumb/'.$namafile);
         $foto->move('images/', $namafile);
         $kandidat->foto = $namafile;
 
@@ -44,5 +44,22 @@ class KandidatController extends Controller
         $kandidat->save();
 
         return redirect('/home/kandidat')->with('pesan', 'Kandidat Berhasil ditambahkan!');
+    }
+
+    public function delete($req){
+        \DB::table('kandidat')->where('no_urut', '=', $req)->delete();
+        
+        return redirect('/home/kandidat')->with('pesan', 'Kandidat Berhasil dihapus!');
+
+    }
+
+    public function update(Request $requ, $req){
+        Kandidat::where('no_urut', $req)->update(['nama' => $requ->nama]);
+        Kandidat::where('no_urut', $req)->update(['nim' => $requ->nim]);
+        Kandidat::where('no_urut', $req)->update(['angkatan' => $requ->angkatan]);
+        Kandidat::where('no_urut', $req)->update(['visi' => $requ->visi]);
+        Kandidat::where('no_urut', $req)->update(['misi' => $requ->misi]);
+
+        return redirect('/home/kandidat')->with('pesan', 'Data berhasil diupdate!');
     }
 }

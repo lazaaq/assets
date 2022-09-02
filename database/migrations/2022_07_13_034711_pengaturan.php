@@ -9,7 +9,7 @@ class Pengaturan extends Migration
     public function up()
     {
         Schema::create('pengaturan', function (Blueprint $table) {
-            $table->integer('no_sesi')->default('1');
+            $table->bigIncrements('no_sesi');
             $table->string('nama_kegiatan');
             $table->datetime('dt_mulai');
             $table->datetime('dt_akhir');
